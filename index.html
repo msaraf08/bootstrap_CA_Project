@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duo Delights | Premium Food Ordering</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body class="bg-light text-dark">
+    <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg py-3 border-bottom border-warning border-3">
+        <div class="container">
+            <a class="navbar-brand fw-bolder fs-3 text-warning d-flex align-items-center" href="#">
+                <span
+                    class="bg-warning text-dark rounded-circle p-2 me-2 d-flex justify-content-center align-items-center shadow-sm h-100">
+                    <i class="fas fa-utensils fs-4"></i>
+                </span>
+                <span>Duo Delights</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcollapse">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 fw-medium">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link active text-warning" href="#"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="menuDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-list me-1 text-warning"></i> Our Menu
+                        </a>
+                        <ul
+                            class="dropdown-menu dropdown-menu-dark shadow-lg border-warning border-top-0 border-end-0 border-bottom-0 border-start border-3 rounded-3 mt-3">
+                            <li><a class="dropdown-item py-2 fw-medium fs-5" href="#menuTabs"><i
+                                        class="fas fa-pizza-slice me-3 text-warning"></i>Pizza</a></li>
+                            <li><a class="dropdown-item py-2 fw-medium fs-5" href="#menuTabs"><i
+                                        class="fas fa-hamburger me-3 text-warning"></i>Snacks</a></li>
+                            <li><a class="dropdown-item py-2 fw-medium fs-5" href="#menuTabs"><i
+                                        class="fas fa-glass-cheers me-3 text-warning"></i>Drinks</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <button
+                        class="btn btn-warning rounded-pill px-4 py-2 shadow-sm fw-bold position-relative d-flex align-items-center"
+                        data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart me-2 fs-5"></i>
+                        <span>My Cart</span>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger border border-white border-2 p-2 shadow-sm">
+                            <span class="px-1" id="cartBadge">0</span>
+                            <span class="visually-hidden">items in cart</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+    </nav>
+
+    <header class="bg-dark shadow position-relative">
+        <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-indicators mb-4 z-3">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0"
+                    class="active p-2 rounded-circle border-0 me-2" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"
+                    class="p-2 rounded-circle border-0 me-2" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"
+                    class="p-2 rounded-circle border-0" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="./assets/slide1.avif" class="d-block w-100 vh-100 object-fit-cover bg-dark"
+                        style="opacity: 0.65;" alt="Pizza Hero">
+                    <div
+                        class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 pb-0 z-2 top-0">
+                        <span class="badge bg-warning text-dark fs-5 px-4 py-2 mb-4 rounded-pill shadow-lg"><i
+                                class="fas fa-star me-2"></i> Rated #1 in Campus</span>
+                        <h1 class="display-1 fw-bold text-white text-uppercase mb-3 shadow-lg px-2">Duo Delights</h1>
+                        <p class="fs-4 text-light fw-medium mb-5 shadow-lg max-w-75">We bake our own pizza base for that
+                            authentic crunch.</p>
+                        <a href="#featured"
+                            class="btn btn-warning btn-lg rounded-pill px-5 py-3 fw-bolder shadow-lg fs-4 d-flex align-items-center"><span>Order
+                                Now</span> <i
+                                class="fas fa-chevron-down ms-3 fs-5 bg-dark text-warning rounded-circle p-2"></i></a>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/slide2.avif" class="d-block w-100 vh-100 object-fit-cover bg-dark"
+                        style="opacity: 0.65;" alt="Burger Hero">
+                    <div
+                        class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 pb-0 z-2 top-0">
+                        <h1 class="display-1 fw-bold text-white text-uppercase mb-3 shadow-lg px-2">Craving Burgers?
+                        </h1>
+                        <p class="fs-4 text-light fw-medium mb-5 shadow-lg max-w-75">Juicy, thick, and perfectly grilled
+                            specifically just for you.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/slide3.avif" class="d-block w-100 vh-100 object-fit-cover bg-dark"
+                        style="opacity: 0.65;" alt="Drinks Hero">
+                    <div
+                        class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 pb-0 z-2 top-0">
+                        <h1 class="display-1 fw-bold text-white text-uppercase mb-3 shadow-lg px-2">Chill Out</h1>
+                        <p class="fs-4 text-light fw-medium mb-5 shadow-lg max-w-75">Smoothies, thick milkshakes, and
+                            totally chilled sodas.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 z-1 pointer-events-none"></div>
+
+            <button class="carousel-control-prev z-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark border border-2 rounded p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next z-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark border border-2 rounded p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="container" style="margin-top: -3rem; position: relative; z-index: 5;">
+        <div class="alert alert-warning border border-warning shadow-lg rounded-4 p-4 d-flex flex-column flex-md-row align-items-center mx-lg-5 bg-white"
+            role="alert">
+            <span
+                class="display-5 text-warning border border-2 border-warning rounded-circle p-3 bg-dark shadow-sm mb-3 mb-md-0 d-flex justify-content-center align-items-center">
+                <i class="fas fa-gift"></i>
+            </span>
+            <div class="ms-md-4 text-center text-md-start w-100">
+                <h3 class="fw-bold text-dark mb-1">Massive Weekend Offer!</h3>
+                <p class="mb-0 fs-5 text-dark pb-1 mt-2">Get <strong>20% off</strong> on all premium pizzas every
+                    weekend. Apply promo code <span
+                        class="badge bg-success fs-5 py-2 px-3 mx-1 shadow-sm user-select-all">DUO20</span> at checkout!
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="featured" class="py-5">
+        <div class="container">
+
+            <h2 class="text-center mb-4">
+                <i class="fas fa-star text-warning"></i> Featured Delights
+            </h2>
+            <p class="text-muted fs-4 col-lg-8 mx-auto lead">Discover our top-rated, mouth-watering selections
+                perfectly crafted with the freshest locally sourced ingredients.</p>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="./assets/margheritaPizza.avif" class="card-img-top"
+                            style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Margherita Pizza</h5>
+                            <p class="card-text">Classic cheese pizza</p>
+                            <span class="fw-bold">₹120</span>
+                            <button type="button" class="btn btn-success rounded-pill">+ Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="./assets/burger.avif" class="card-img-top" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Aloo Tikki Burger</h5>
+                            <p class="card-text">Crispy veg burger</p>
+                            <span class="fw-bold">₹40</span>
+                            <button type="button" class="btn btn-success rounded-pill">+ Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <img src="./assets/drink.avif" class="card-img-top" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Mint Mojito</h5>
+                            <p class="card-text">Refreshing cold drink</p>
+                            <span class="fw-bold">₹40</span>
+                            <button type="button" class="btn btn-success rounded-pill">+ Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-5">
+        <div class="container">
+
+            <h2 class="text-center mb-4">
+                <i class="fas fa-utensils text-warning"></i> Complete Menu
+            </h2>
+
+            <ul class="nav nav-tabs justify-content-center mb-4">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pizza">
+                        <i class="fas fa-pizza-slice"></i> Pizza
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#burger">
+                        <i class="fas fa-hamburger"></i> Burger
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#drinks">
+                        <i class="fas fa-glass-whiskey"></i> Drinks
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div class="tab-pane fade show active" id="pizza">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><img src="./assets/margheritaPizza.avif" width="80" height="80"
+                                        style="object-fit:cover;"></td>
+                                <td>Margherita</td>
+                                <td>Cheese Pizza</td>
+                                <td>₹120</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/margheritaPizza.avif" width="80" height="80"></td>
+                                <td>Paneer Tikka</td>
+                                <td>Paneer loaded pizza</td>
+                                <td>₹190</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/margheritaPizza.avif" width="80" height="80"></td>
+                                <td>Veg Cheese Burst</td>
+                                <td>Extra cheese pizza</td>
+                                <td>₹250</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="burger">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><img src="./assets/burger.avif" width="80" height="80"></td>
+                                <td>Aloo Tikki Burger</td>
+                                <td>Simple veg burger</td>
+                                <td>₹40</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/burger.avif" width="80" height="80"></td>
+                                <td>Cheese Burger</td>
+                                <td>Cheese loaded burger</td>
+                                <td>₹60</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/burger.avif" width="80" height="80"></td>
+                                <td>Paneer Zinger Burger</td>
+                                <td>Spicy paneer burger</td>
+                                <td>₹80</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="drinks">
+                    <table class="table table-bordered align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><img src="./assets/drink.avif" width="80" height="80"></td>
+                                <td>Mint Mojito</td>
+                                <td>Refreshing drink</td>
+                                <td>₹40</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/drink.avif" width="80" height="80"></td>
+                                <td>Blueberry Mojito</td>
+                                <td>Cool drink</td>
+                                <td>₹40</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="./assets/drink.avif" width="80" height="80"></td>
+                                <td>Green Apple Mojito</td>
+                                <td>Fresh taste</td>
+                                <td>₹40</td>
+                                <td><button class="btn btn-warning btn-sm"><i class="fas fa-cart-plus"></i> Add</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart text-warning"></i> My Cart
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <i class="fas fa-shopping-basket fa-2x text-muted mb-3"></i>
+                    <p>Your cart is empty</p>
+                    <p class="fw-bold">Total: ₹0</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-warning">Checkout</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-5 mt-5 border-top border-warning border-5 position-relative overflow-hidden">
+        <div class="container py-5 position-relative z-2">
+            <div class="row g-5 justify-content-between">
+                <div class="col-lg-4 col-md-12 pe-lg-5">
+                    <h1 class="fw-bolder mb-4 text-warning d-flex align-items-center">
+                        <span
+                            class="bg-warning text-dark rounded-circle p-3 me-3 shadow-lg d-flex justify-content-center align-items-center"
+                            style="width: 60px; height: 60px;">
+                            <i class="fas fa-utensils fs-3"></i>
+                        </span>
+                        Duo Delights
+                    </h1>
+                    <p class="text-white opacity-75 fs-5 lh-lg mb-4 fw-medium">We guarantee perfect taste, premium fresh
+                        ingredients, and lightning fast delivery completely straight to your doorstep.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 ps-lg-5">
+                    <h3 class="fw-bold mb-4 text-white border-bottom border-warning pb-3 d-inline-block border-3">
+                        Important Links</h3>
+                    <ul class="list-unstyled flex-column gap-3 d-flex fs-5 mt-2">
+                        <li><a href="#"
+                                class="text-white text-opacity-75 text-decoration-none fw-medium d-inline-flex align-items-center"><i
+                                    class="fas fa-chevron-right me-3 text-warning"></i>Terms & Conditions</a></li>
+                        <li><a href="#"
+                                class="text-white text-opacity-75 text-decoration-none fw-medium d-inline-flex align-items-center"><i
+                                    class="fas fa-chevron-right me-3 text-warning"></i>Privacy Policy</a></li>
+                        <li><a href="#"
+                                class="text-white text-opacity-75 text-decoration-none fw-medium d-inline-flex align-items-center"><i
+                                    class="fas fa-chevron-right me-3 text-warning"></i>Contact Us Form</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 text-lg-end">
+                    <h3 class="fw-bold mb-4 text-white border-bottom border-warning pb-3 d-inline-block border-3">
+                        Connect With Us</h3>
+                    <div class="d-flex justify-content-lg-end gap-3 mt-3">
+                        <a href="#"
+                            class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center shadow-lg p-3"><i
+                                class="fab fa-instagram fs-3 text-dark m-1"></i></a>
+                        <a href="#"
+                            class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center shadow-lg p-3"><i
+                                class="fab fa-facebook-f fs-3 text-dark m-1 mx-2"></i></a>
+                        <a href="#"
+                            class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center shadow-lg p-3"><i
+                                class="fab fa-whatsapp fs-3 text-dark m-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 border-secondary border-2 opacity-50">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white opacity-75 m-0 pt-3 pb-2 fs-6 fw-bold">
+                <p class="mb-2 mb-md-0">&copy; 2026 <strong>Duo Delights System</strong>. All rights reserved.</p>
+                <p class="mb-0">Powered by strictly Bootstrap 5 Utilities.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
